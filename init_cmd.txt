@@ -1,0 +1,14 @@
+=========================================
+|       WINDOWS COMMAND INSTRUCTIONS    |
+=========================================
+
+1) invoke the GNU C++ compiler and create executable file with name
+
+> g++ prog01.cpp -o prog01
+
+2) run the executable file 
+
+> ./prog01
+
+3) to manage different type of encoding in vscode, select 
+utf-8 > save with encoding > Cyrillic (Windows 1251)

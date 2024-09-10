@@ -2,6 +2,9 @@
 |       WINDOWS COMMAND INSTRUCTIONS    |
 =========================================
 
+0) download and install MinGW (minimalist GNU for windows) in link:
+https://sourceforge.net/projects/mingw/files/latest/download
+
 1) invoke the GNU C++ compiler and create executable file with name
 
 > g++ prog01.cpp -o prog01

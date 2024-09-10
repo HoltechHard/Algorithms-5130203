@@ -3,7 +3,7 @@
     Given the definition of functions F(a, b) and G(x)
     Calculate f+G, f*g, f/g
 
-    Defition of variables
+    Definition of variables
         - a, b: arguments of function F
         - F: output variable for F(a, b)
         - x: argument of function G

@@ -7,15 +7,19 @@
 using namespace std;
 
 int main(){
+    cout<< "**** PROGRAM 01 **** \n";
+
+    // definition of variables
     float x, y, z;
     cout<< "Print value of x: "<<endl;
     cin>>x;
     cout << "Hello, World!" << endl;
     y = sqrt(x);
     z = pow(x, 2);
+    
     cout<< "Square = "<< y << endl;
     cout<< "Power in 2 = "<< z << endl;
 
-    return 0;
+   return 0;
 
 }

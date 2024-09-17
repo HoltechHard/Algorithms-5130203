@@ -15,17 +15,21 @@
 #include <cmath>
 using namespace std;
 
-int main(){
+int main(){    
+    // definition of variables
     int n, i, num_divisors=0, sum_divisors=0;
 
+    // input the number by user
     do{
         cout<< "Enter the n: ";
         cin>> n;
         
     }while(n<2 || n>1000);
 
+    // cycle to verify potential divisors of n
     cout<< "Divisors: "<< endl;
     for(i=1; i<=n; i++){
+        // condition to i will be divisor of n
         if(n % i == 0){
             cout<< i << " ";
             num_divisors++;

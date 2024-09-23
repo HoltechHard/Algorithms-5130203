@@ -11,6 +11,7 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
 ### Неделя 03 – Функции и Процедуры  
 
 
+
 ### Неделя 02 – Условные и повторяющиеся инструции  
 
   **Гланые Подтемы**:  
@@ -23,12 +24,13 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
   Совет недели: Блок-схема и синтаксис программирования  
 
   - оператор switch-case
+
     **блок схема**
-      
+        
     ![image](https://github.com/user-attachments/assets/38fcef05-9313-4fd7-90a9-e006f114e1d7)  
 
     **код синтаксис**  
-
+  
 ```
     switch (выражение) { 
       case value_1 : 
@@ -44,50 +46,60 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
            break; 
     }
 ```
-  - оператор while
-
-  **блок схема**  
   
+  - оператор while  
+  
+  **блок схема**  
+    
   ![image](https://github.com/user-attachments/assets/733d0422-481f-447c-9a7f-aceffe0c5ab3)  
 
   **код синтаксис**  
-
+  
+```
   выражение инициализации;
   while(test_expression) 
   { 
      // операторы update_expression; 
    }
+```
+    
+  - оператор do-while  
   
-  - оператор do-while
-
   **блок схема**  
+    
   ![image](https://github.com/user-attachments/assets/726db14a-2e85-440a-9f51-5b87cef4c986)  
     
   **код синтаксис**  
-  
+      
+```
   выражение инициализации;
   do 
   { 
      // операторы update_expression; 
   } while(test_expression);  
+```
   
-  - оператор for
-  
+  - оператор for   
+    
   **блок схема**  
-  ![image](https://github.com/user-attachments/assets/90a304b6-3ca1-4883-a4cb-474e957ce1a7)  
+    
+  ![image](https://github.com/user-attachments/assets/90a304b6-3ca1-4883-a4cb-474e957ce1a7)   
     
   **код синтаксис**  
-    
+
+```      
   for(initialization expr; test expr; update expr)
   {     
        // тело цикла 
        // операторы, которые мы хотим выполнить 
   }
-
+```
+  
   - Код ASCII
 
   Таблица ASCII (**A**merican **S**tandard **C**ode for **I**nformation **I**nterchange)  
-  
+
+    
 
   **Домашнее задание (от 18.09 до 25.09)**:  
     **Нет** Повторите и попрактикуйтесь в темах второй недели.  

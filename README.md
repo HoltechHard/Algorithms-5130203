@@ -8,9 +8,9 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
 Даты сдачи задач:  
 Задания назначаются по средам, обсуждаются по понедельникам и должны быть сданы не позднее, чем через 1 неделю после задания (каждую следующую среду).  
 
-### Неделя 03 – Функции и Процедуры  
-
-
+### Неделя 03 – Указатели и ссылки   
+  
+  
 
 ### Неделя 02 – Условные и повторяющиеся инструции  
 
@@ -29,8 +29,8 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
   - оператор switch-case
     
   **блок схема**  
-      
-    ![image](https://github.com/user-attachments/assets/38fcef05-9313-4fd7-90a9-e006f114e1d7)  
+    
+  ![image](https://github.com/user-attachments/assets/38fcef05-9313-4fd7-90a9-e006f114e1d7)  
 
   **код синтаксис**  
   
@@ -98,15 +98,15 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
   }
 ```
   
-  - Код ASCII
-
+  - Код ASCII  
+   
   Таблица ASCII (**A**merican **S**tandard **C**ode for **I**nformation **I**nterchange)  
     
-  ![ascii_code](https://github.com/user-attachments/assets/a596bf61-bc1e-4375-a43f-a9666c8cb9f5)
-   
-  
-### Неделя 01 – Последовательно и управляющие инструции
-  
+  ![ascii_code](https://github.com/user-attachments/assets/a596bf61-bc1e-4375-a43f-a9666c8cb9f5)  
+    
+    
+### Неделя 01 – Последовательно и управляющие инструции  
+    
   **Гланые Подтемы**:  
   - Фундаментальные основы программирования на C++;
   - Константы, переменные и типы данных в C++;

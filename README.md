@@ -91,7 +91,7 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
   **код синтаксис**  
 
 ```      
-  for(initialization expr; test expr; update expr)
+  for(initialization expr; conditional expr; update expr)
   {     
        // тело цикла 
        // операторы, которые мы хотим выполнить 

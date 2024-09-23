@@ -27,12 +27,12 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
   **Совет недели: Блок-схема и синтаксис программирования**  
 
   - оператор switch-case
-
-    **блок схема**
     
+  **блок схема**  
+      
     ![image](https://github.com/user-attachments/assets/38fcef05-9313-4fd7-90a9-e006f114e1d7)  
 
-    **код синтаксис**  
+  **код синтаксис**  
   
 ```
     switch (выражение) { 
@@ -101,6 +101,7 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
   - Код ASCII
 
   Таблица ASCII (**A**merican **S**tandard **C**ode for **I**nformation **I**nterchange)  
+    
   ![ascii_code](https://github.com/user-attachments/assets/a596bf61-bc1e-4375-a43f-a9666c8cb9f5)
    
   

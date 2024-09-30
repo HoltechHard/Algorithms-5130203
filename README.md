@@ -168,7 +168,7 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
   ![ascii_code](https://github.com/user-attachments/assets/a596bf61-bc1e-4375-a43f-a9666c8cb9f5)  
     
     
-### Неделя 01 – Последовательно и управляющие инструции  
+### Урок 01 – Последовательно и управляющие инструции  
 --------------------------------------------------------  
   
   **Гланые Подтемы**:  

@@ -20,8 +20,9 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
   - Указатели на массивы    
 
   **Домашнее задание (это не обязательно, просто кто хочет - для олимпийского оборудования)**  
-    ![image](https://github.com/user-attachments/assets/ad90be44-d7c5-49b3-b38e-f323b9acc0ce)  
     
+  ![image](https://github.com/user-attachments/assets/3b84923f-03cb-4b73-b92a-e8628d1740c1)
+     
   **Что такое указателей?**  
   это символические представления адресов.  
 

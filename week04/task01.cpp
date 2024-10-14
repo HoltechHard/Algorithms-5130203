@@ -40,9 +40,9 @@ int main(){
 
     // input vectors A and B
     cout<<"\nInput the elements for vectors: "<<endl;
-    cout<<"\nA: ";
+    cout<<"\nA: "<<endl;
     input_vector(n, a);
-    cout<<"\nB:";
+    cout<<"\nB: "<<endl;
     input_vector(n, b);
 
     // print elements of vectors A and B

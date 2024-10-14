@@ -1,5 +1,5 @@
 /*
-    WEEK 04 - PROGRAM 01: INTRO TO FUNCTIONS AND PROCESSES
+    WEEK 04 - PROGRAM 01: INTRO TO FUNCTIONS AND PROCEDURES
     Develop a program that make the next 3 operations:
     1. Define a function that increment the variable n in 2 units using functions
        with call by value. The argument n cannot be altered.

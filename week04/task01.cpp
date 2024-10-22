@@ -23,6 +23,9 @@
         - s_prod: output result of calculate scalar product
         - angle: output result of calculate angle between 2 vectors using functions with call by value
         - angle2: output result of calculate angle between 2 vectors using procedure
+        - mean: output result of calculate mean of ordered vector C
+        - std: output result of calculate standard deviation of ordered vector C
+        - median: output result of calculate median of ordered vector C
 */
 
 #include <iostream>
@@ -41,12 +44,15 @@ double calculate_angle(int n, int *x, int *y);
 void calculate_angle2(int n, int *x, int *y, double *angle);
 void unify_vector(int n, int *x1, int *x2, int *y);
 void insertion_sort(int n, int *x);
+double calculate_mean(int n, int *x);
+double calculate_std(int n, int *x);
+double calculate_median(int n, int *x);
 
 // main function
 int main(){
     // define variables
     int n, *a, *b, *c;
-    double e_dist, s_prod, angle, angle2;
+    double e_dist, s_prod, angle, angle2, mean, std, median;
 
     // input the number of elements for vectors
     input_num_elements(&n);
@@ -94,6 +100,14 @@ int main(){
     insertion_sort(2*n, c);
     cout<<"\nSorted vector: "<<endl;
     print_vector(2*n, c);
+
+    // print statistical results
+    mean = calculate_mean(2*n, c);
+    cout<<"\nMean = "<<mean<<endl;
+    std = calculate_std(2*n, c);
+    cout<<"\nStd = "<<std<<endl;
+    median = calculate_median(2*n, c);
+    cout<<"\nMedian = "<<median<<endl;
 
     return 0;
 }
@@ -205,3 +219,35 @@ void insertion_sort(int n, int *x){
     }
 }
 
+// function to calculate mean of vector C
+double calculate_mean(int n, int *x){
+    double sum = 0.0;
+
+    for(int i=0; i<n; i++){
+        sum += x[i];
+    }
+
+    return sum/n;
+}
+
+// function to calculate standard deviation of vector C
+double calculate_std(int n, int *x){
+    double mean=0.0, std=0.0;
+
+    mean = calculate_mean(n, x);
+
+    for(int i=0; i<n; i++){
+        std+= pow(x[i] - mean, 2);
+    }
+
+    return sqrt(std/n);
+}
+
+// function to calculate median of vector C
+double calculate_median(int n, int *x){
+    if(n%2 != 0){
+        return x[(n-1)/2];
+    }else{
+        return (x[n/2-1]+x[n/2])/2.0;
+    }   // one unit less than formula defined, because index in vector start in 0
+}

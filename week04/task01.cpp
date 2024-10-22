@@ -1,6 +1,6 @@
 /*
     LIST 04 - TASK 01: BASIC OPERATIONS WITH VECTORS
-    Using functions and prodecures, enter vectors A and B with dynamic memory
+    Using functions and procedures, enter vectors A and B with dynamic memory
     and let the user define the number of elements. Make the next operations:
 
     [1]. Create a procedure that allows the user to enter vector elements from the keyboard.

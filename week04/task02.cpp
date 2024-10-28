@@ -41,11 +41,16 @@ long long generate_number(int n, int *x);
 void vec_count_digits(int n, int *x, int *d);
 void count_digits(int num, int *d);
 void report_digits(int *d);
+void copy_vector(int n, int *x, int *y);
+void vec_drop_2lowest(int n, int *x);
+int drop_2lowest_digit(int num, int pos);
+void search_position(int num, int s_digit, int *pos);
+void search_2lowest_digit(int num, int *seclow_dig);
 
 // main function
 int main(){
     // define variables
-    int n, *a, *b, *d;
+    int n, *a, *b, *d, *x;
     long long num;
 
     // input number of elements for vector
@@ -81,6 +86,13 @@ int main(){
     cout<<"Report of digits:"<<endl;
     report_digits(d);
 
+    // drop
+    x = allocate_memory(n);
+    copy_vector(n, a, x);
+    vec_drop_2lowest(n, x);
+    cout<<"\nVector after dropping 2 lowest digits: "<<endl;
+    print_vector(n, x);
+
     return 0;
 }
 
@@ -104,6 +116,12 @@ void input_vector(int n, int *x){
             cout<<"X["<<i<<"]: ";
             cin>>x[i];
         }while(x[i]<1000 || x[i]>10000);        
+    }
+}
+
+void copy_vector(int n, int *x, int *y){
+    for(int i=0; i<n; i++){
+        y[i]=x[i];
     }
 }
 
@@ -193,5 +211,77 @@ void count_digits(int num, int *d){
 void report_digits(int *d){
     for(int i=0; i<10; i++){
         cout<<"Digit "<<i<<" count "<<d[i]<<" elements"<<endl;
+    }
+}
+
+void vec_drop_2lowest(int n, int *x){
+    int sec_lowest, pos;
+
+    for(int i=0; i<n; i++){
+        sec_lowest=10;
+        pos=0;
+        search_2lowest_digit(x[i], &sec_lowest);
+        search_position(x[i], sec_lowest, &pos);
+        x[i] = drop_2lowest_digit(x[i], pos);
+    }
+}
+
+int drop_2lowest_digit(int num, int pos){
+    int aux, dig, curr_pos=0;
+    int number=0, order = 1;
+    aux = num;
+
+    while(aux>0){
+        dig = aux%10;
+
+        if(curr_pos != pos){
+            number = number + dig * order;
+            order = order*10;
+        }
+
+        aux = aux/10;
+        curr_pos++;
+    }
+
+    return number;
+}
+
+void search_position(int num, int s_digit, int *pos){
+    int aux, dig, curr_pos=0;
+    bool is_found=false;
+    aux = num;
+
+    while(aux>0 && is_found == false){
+        dig = aux%10;
+
+        if(s_digit == dig){
+            *pos = curr_pos;
+            is_found = true;
+        }
+
+        aux = aux/10;
+        curr_pos++;
+    }
+}
+
+void search_2lowest_digit(int num, int *seclow_dig){
+    int aux, dig, low_dig;
+    aux = num;
+    // initialization
+    low_dig = 10;
+    *seclow_dig = 10;
+
+    while(aux>0){
+        dig = aux%10;
+
+        if(dig<low_dig){
+            *seclow_dig = low_dig;
+            low_dig = dig;
+        }else if(low_dig==dig){
+            *seclow_dig = dig;
+        }else if(dig>low_dig && dig < *seclow_dig){
+            *seclow_dig = dig;
+        }
+        aux = aux/10;
     }
 }

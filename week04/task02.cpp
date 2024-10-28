@@ -37,11 +37,16 @@ void print_vector(int n, int *x);
 bool is_starkx(int n, int *x);
 void generate_vec_max_digits(int n, int *x, int *y);
 int search_highest_digit(int num);
+long long generate_number(int n, int *x);
+void vec_count_digits(int n, int *x, int *d);
+void count_digits(int num, int *d);
+void report_digits(int *d);
 
 // main function
 int main(){
     // define variables
-    int n, *a, *b;
+    int n, *a, *b, *d;
+    long long num;
 
     // input number of elements for vector
     input_num_elements(&n);
@@ -67,6 +72,14 @@ int main(){
     generate_vec_max_digits(n, a, b);
     cout<<"\nVector of max digits: "<<endl;
     print_vector(n, b);
+    num = generate_number(n, b);
+    cout<<"\nGenerated number = "<<num<<endl;
+
+    // vector to count the digits
+    d = allocate_memory(10);
+    vec_count_digits(n, a, d);
+    cout<<"Report of digits:"<<endl;
+    report_digits(d);
 
     return 0;
 }
@@ -146,3 +159,39 @@ int search_highest_digit(int num){
     return max_dig;
 }
 
+long long generate_number(int n, int *x){
+    long long num = 0, order=1;
+
+    for(int i=0; i<n; i++){
+        num = num + x[i]*order;
+        order = order * 10;
+    }
+
+    return num;
+}
+
+void vec_count_digits(int n, int *x, int *d){
+    for(int i=0; i<10; i++)
+        d[i] = 0;
+    
+    for(int i=0; i<n; i++){
+        count_digits(x[i], d);
+    }
+}
+
+void count_digits(int num, int *d){
+    int aux, dig;
+    aux = num;
+
+    while(aux>0){
+        dig = aux%10;
+        d[dig]++;
+        aux = aux/10;
+    }
+}
+
+void report_digits(int *d){
+    for(int i=0; i<10; i++){
+        cout<<"Digit "<<i<<" count "<<d[i]<<" elements"<<endl;
+    }
+}

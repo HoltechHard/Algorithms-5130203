@@ -22,6 +22,9 @@
         - n: number of elements of vector
         - a: vector of numbers
         - b: vector with max digits
+        - d: vector to count the digits in elements of vector a
+        - x: vector which drop 2nd lowest digits for each number
+        - d2: vector to count the digits in elements of vector x
 
 */
 

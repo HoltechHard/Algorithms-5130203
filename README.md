@@ -29,11 +29,12 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
   (только для тех, кто хочет кто любопытен, хочет углубиться или уже имеет основы анализа алгоритмов и асимптотического анализа алгоритмов)  
   - https://icpc.global/worldfinals/past-problems   
   - https://icpcarchive.github.io/  
-  - https://codeforces.com/
+  - https://codeforces.com/  
 
   * Мотивация для будущих талантов программирования (Yandex Cup 2024)  
-  ![image](https://github.com/user-attachments/assets/ab2da494-26bc-4e07-95cb-8bf8625a3a9f)  
-  
+     
+  ![image](https://github.com/user-attachments/assets/ab2da494-26bc-4e07-95cb-8bf8625a3a9f)   
+    
 ### Урок 04 - Функции и процедуры  
 ----------------------------------  
 

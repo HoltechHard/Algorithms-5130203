@@ -42,15 +42,15 @@ void vec_count_digits(int n, int *x, int *d);
 void count_digits(int num, int *d);
 void report_digits(int *d);
 void copy_vector(int n, int *x, int *y);
-void vec_drop_2lowest(int n, int *x);
-int drop_2lowest_digit(int num, int pos);
-void search_position(int num, int s_digit, int *pos);
+void vec_drop_2lowest_digit(int n, int *x);
 void search_2lowest_digit(int num, int *seclow_dig);
+void search_position_digit(int num, int search_digit, int *pos);
+int drop_2lowest_digit(int num, int pos);
 
 // main function
 int main(){
     // define variables
-    int n, *a, *b, *d, *x;
+    int n, *a, *b, *d, *x, *d2;
     long long num;
 
     // input number of elements for vector
@@ -70,7 +70,7 @@ int main(){
         cout<<"\nThe vector is STARKX"<<endl;
     }else{
         cout<<"\nThe vector is not STARKX"<<endl;
-    }
+    }    
 
     // generate vector with maximum digits
     b = allocate_memory(n);
@@ -83,15 +83,21 @@ int main(){
     // vector to count the digits
     d = allocate_memory(10);
     vec_count_digits(n, a, d);
-    cout<<"Report of digits:"<<endl;
+    cout<<"\nReport of digits:"<<endl;
     report_digits(d);
 
-    // drop
+    // drop the second lowest digit
     x = allocate_memory(n);
     copy_vector(n, a, x);
-    vec_drop_2lowest(n, x);
-    cout<<"\nVector after dropping 2 lowest digits: "<<endl;
+    vec_drop_2lowest_digit(n, x);
+    cout<<"\nVector of numbers after dropping 2nd lowest digits: "<<endl;
     print_vector(n, x);
+
+    // report of digit counts after drop 2nd lowest digit    
+    d2 = allocate_memory(10);
+    vec_count_digits(10, x, d2);
+    cout<<"\nReport of digit counts after drop 2nd lowest digits: "<<endl;
+    print_vector(10, d2);
 
     return 0;
 }
@@ -119,18 +125,18 @@ void input_vector(int n, int *x){
     }
 }
 
-void copy_vector(int n, int *x, int *y){
-    for(int i=0; i<n; i++){
-        y[i]=x[i];
-    }
-}
-
 // procedure to print the elements of vector
 void print_vector(int n, int *x){
     for(int i=0; i<n; i++){
         cout<<x[i]<<"  ";
     }
     cout<<endl;
+}
+
+// procedure to copy vector
+void copy_vector(int n, int *x, int *y){
+    for(int i=0; i<n; i++)
+        y[i]=x[i];    
 }
 
 // function to check if vector is STARKX
@@ -151,7 +157,7 @@ bool is_starkx(int n, int *x){
     return flag;
 }
 
-// procedure to generate vector with max digits
+// vectorize procedure to generate vector with max digits
 void generate_vec_max_digits(int n, int *x, int *y){
     for(int i=0; i<n; i++){
         y[i] = search_highest_digit(x[i]);
@@ -167,7 +173,8 @@ int search_highest_digit(int num){
     while(aux>0){
         dig = aux%10;
 
-        if(dig>max_dig){    // check if have higher digit than currently max_digit
+        // check if current digit is higher than the highest_digit
+        if(dig>max_dig){    
             max_dig = dig;
         }
 
@@ -177,6 +184,7 @@ int search_highest_digit(int num){
     return max_dig;
 }
 
+// function to generate number using the vector of highest digits
 long long generate_number(int n, int *x){
     long long num = 0, order=1;
 
@@ -188,7 +196,9 @@ long long generate_number(int n, int *x){
     return num;
 }
 
+// vectorize procedure to count the number of digits for each number
 void vec_count_digits(int n, int *x, int *d){
+    // initialize vector counter of #digits
     for(int i=0; i<10; i++)
         d[i] = 0;
     
@@ -197,80 +207,48 @@ void vec_count_digits(int n, int *x, int *d){
     }
 }
 
+// procedure to count the number of digits for 1 number
 void count_digits(int num, int *d){
     int aux, dig;
     aux = num;
 
     while(aux>0){
         dig = aux%10;
-        d[dig]++;
+        d[dig]++;   // counter #digits
         aux = aux/10;
     }
 }
 
+// procedure to report the #digits counted
 void report_digits(int *d){
     for(int i=0; i<10; i++){
         cout<<"Digit "<<i<<" count "<<d[i]<<" elements"<<endl;
     }
 }
 
-void vec_drop_2lowest(int n, int *x){
+// vectorize procedure to drop the 2nd lowest digit
+void vec_drop_2lowest_digit(int n, int *x){
     int sec_lowest, pos;
 
     for(int i=0; i<n; i++){
         sec_lowest=10;
         pos=0;
         search_2lowest_digit(x[i], &sec_lowest);
-        search_position(x[i], sec_lowest, &pos);
+        search_position_digit(x[i], sec_lowest, &pos);
         x[i] = drop_2lowest_digit(x[i], pos);
     }
 }
 
-int drop_2lowest_digit(int num, int pos){
-    int aux, dig, curr_pos=0;
-    int number=0, order = 1;
-    aux = num;
-
-    while(aux>0){
-        dig = aux%10;
-
-        if(curr_pos != pos){
-            number = number + dig * order;
-            order = order*10;
-        }
-
-        aux = aux/10;
-        curr_pos++;
-    }
-
-    return number;
-}
-
-void search_position(int num, int s_digit, int *pos){
-    int aux, dig, curr_pos=0;
-    bool is_found=false;
-    aux = num;
-
-    while(aux>0 && is_found == false){
-        dig = aux%10;
-
-        if(s_digit == dig){
-            *pos = curr_pos;
-            is_found = true;
-        }
-
-        aux = aux/10;
-        curr_pos++;
-    }
-}
-
+// procedure to find the 2nd lowest digit for 1 number
 void search_2lowest_digit(int num, int *seclow_dig){
     int aux, dig, low_dig;
     aux = num;
+
     // initialization
     low_dig = 10;
     *seclow_dig = 10;
 
+    // number decomposition
     while(aux>0){
         dig = aux%10;
 
@@ -282,6 +260,49 @@ void search_2lowest_digit(int num, int *seclow_dig){
         }else if(dig>low_dig && dig < *seclow_dig){
             *seclow_dig = dig;
         }
+
         aux = aux/10;
     }
+}
+
+// procedure to find the positional order of 2nd lowest digit
+void search_position_digit(int num, int search_digit, int *pos){
+    int aux, dig, curr_pos=0;
+    bool is_found=false;    // variable which control if searched digit was found
+    aux = num;
+
+    while(aux>0 && is_found == false){
+        dig = aux%10;
+
+        // searched digit was found
+        if(search_digit == dig){
+            *pos = curr_pos;
+            is_found = true;
+        }
+
+        aux = aux/10;
+        curr_pos++;
+    }
+}
+
+// procedure to recalcule the number dropping the 2nd lowest digit
+int drop_2lowest_digit(int num, int pos){
+    int aux, dig, curr_pos=0;
+    int number=0, order = 1;
+    aux = num;
+
+    while(aux>0){
+        dig = aux%10;
+
+        // compute number in all positional orders except in position of 2nd lowest digit
+        if(curr_pos!= pos){
+            number = number + dig * order;
+            order = order*10;
+        }
+
+        aux = aux/10;
+        curr_pos++;
+    }
+
+    return number;
 }

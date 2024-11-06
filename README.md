@@ -18,7 +18,8 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
 https://docs.google.com/spreadsheets/d/1Q8S7YEbfa3hgYGx0NySDnCXUjpEq_215/edit?usp=sharing&ouid=102162186379183170525&rtpof=true&sd=true  
   
 - Решение экзамена:    
-https://github.com/HoltechHard/Algorithms-5130203/tree/master/exam01   
+https://github.com/HoltechHard/Algorithms-5130203/tree/master/exam01
+   
 ![image](https://github.com/user-attachments/assets/c93e811f-81c2-4c11-8ec4-09e585386fd8)  
   
 - Оригинальные экзамены студентов:  

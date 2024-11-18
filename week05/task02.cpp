@@ -84,12 +84,12 @@ void print_matrix(int n, char **x){
 void order_words(int n, char **x){
     char aux[MAX];
 
-    for(int i=0; i<n; i++){
+    for(int i=0; i<n-1; i++){
         for(int j=i+1; j<n; j++){
-            if(strcmp(x[j-1], x[j])>0){
-                strcpy(aux, x[j-1]);
-                strcpy(x[j-1], x[j]);
-                strcpy(x[j], aux);
+            if(strcmp(x[i], x[j])>0){
+                strcpy(aux, x[j]);
+                strcpy(x[j], x[i]);
+                strcpy(x[i], aux);
             }
         }
     }

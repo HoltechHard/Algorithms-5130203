@@ -17,23 +17,23 @@ using namespace std;
 
 // head of functions defined by user
 void input_dimension(int *n);
-double **allocate_matrix(int n);
-void input_matrix(int n, double **x);
-void print_matrix(int n, double **x);
-double calculate_determinant(int n, double **x);
-double calculate_det_2x2(double **x);
-double calculate_det_3x3(int n, double **x);
-double **generate_submatrix(int idx, int n, double **x);
-double calculate_det_nxn(int n, double **x);
-int get_pivot_position(int col_idx, int n, double **x);
-void mov_rows(int row_idx, int piv_pos, int n, double **x);
-void gauss_jordan_algorithm(int n, double **x, double *sign);
-void free_memory(int n, double **x);
+long double **allocate_matrix(int n);
+void input_matrix(int n, long double **x);
+void print_matrix(int n, long double **x);
+long double calculate_determinant(int n, long double **x);
+long double calculate_det_2x2(long double **x);
+long double calculate_det_3x3(int n, long double **x);
+long double **generate_submatrix(int idx, int n, long double **x);
+long double calculate_det_nxn(int n, long double **x);
+int get_pivot_position(int col_idx, int n, long double **x);
+void mov_rows(int row_idx, int piv_pos, int n, long double **x);
+void gauss_jordan_algorithm(int n, long double **x, long double *sign);
+void free_memory(int n, long double **x);
 
 // main function
 int main(){
     int n;
-    double **a, det;
+    long double **a, det;
 
     // input dimensionality
     input_dimension(&n);
@@ -48,6 +48,7 @@ int main(){
     // calculate determinant
     det = calculate_determinant(n, a);
     cout<<"\nDeterminant of matrix = "<<det<<endl;
+    free_memory(n, a);
 
     return 0;
 }
@@ -61,18 +62,18 @@ void input_dimension(int *n){
 }
 
 // function for dynamic allocation of memory
-double **allocate_matrix(int n){
-    double **x = new double*[n];
+long double **allocate_matrix(int n){
+    long double **x = new long double*[n+1];
 
     for(int i=1; i<=n; i++){
-        x[i] = new double[n];
+        x[i] = new long double[n+1];
     }
 
     return x;
 }
 
 // procedure to input elements in matrix
-void input_matrix(int n, double **x){
+void input_matrix(int n, long double **x){
     for(int i=1; i<=n; i++){
         cout<<"Row "<<i<<": "<<endl;
 
@@ -84,7 +85,7 @@ void input_matrix(int n, double **x){
 }
 
 // procedure to print elements of matrix
-void print_matrix(int n, double **x){
+void print_matrix(int n, long double **x){
     for(int i=1; i<=n; i++){
         for(int j=1; j<=n; j++){
             cout<<x[i][j]<<"  ";
@@ -94,8 +95,8 @@ void print_matrix(int n, double **x){
 }
 
 // function to calculate determinant
-double calculate_determinant(int n, double **x){
-    double det;
+long double calculate_determinant(int n, long double **x){
+    long double det;
 
     switch(n){
         case 2:
@@ -113,27 +114,27 @@ double calculate_determinant(int n, double **x){
 }
 
 // function to calculate determinant of 2 x 2 matrix
-double calculate_det_2x2(double **x){    
+long double calculate_det_2x2(long double **x){    
     return x[1][1]*x[2][2] - x[1][2]*x[2][1];
 }
 
 // function to calculate determinant of 3 x 3 matrix
-double calculate_det_3x3(int n, double **x){
-    double det=0;
+long double calculate_det_3x3(int n, long double **x){
+    long double det=0;
     
     for(int i=1; i<=n; i++){
-        double **aux = generate_submatrix(i, n, x);
+        long double **aux = generate_submatrix(i, n, x);
         det += pow(-1, i+1) * x[1][i] * calculate_det_2x2(aux);
-        free_memory(n-1, aux);
+        free_memory(2, aux);
     }
 
     return det;
 }
 
 // function to generate 2 x 2 submatrix
-double **generate_submatrix(int idx, int n, double **x){
+long double **generate_submatrix(int idx, int n, long double **x){
     int ri, ci;
-    double **y;
+    long double **y;
     y = allocate_matrix(n-1);
     ri=1;
 
@@ -154,8 +155,8 @@ double **generate_submatrix(int idx, int n, double **x){
 }
 
 // function to calculate determinant using Gauss-Jordan method
-double calculate_det_nxn(int n, double **x){
-    double det=1, sign = 1;
+long double calculate_det_nxn(int n, long double **x){
+    long double det=1, sign=1;
 
     gauss_jordan_algorithm(n, x, &sign);
 
@@ -167,14 +168,14 @@ double calculate_det_nxn(int n, double **x){
 }
 
 // function to get pivot position
-int get_pivot_position(int col_idx, int n, double **x){
+int get_pivot_position(int col_idx, int n, long double **x){
     int piv_pos;
-    double pivot;
+    long double pivot;
     pivot = x[col_idx][col_idx];
 
     for(int i=col_idx+1; i<=n; i++){
         if(abs(x[i][col_idx]) > abs(pivot)){
-            pivot = fabs(x[i][col_idx]);
+            pivot = x[i][col_idx];
             piv_pos = i;
         }
     }
@@ -183,8 +184,8 @@ int get_pivot_position(int col_idx, int n, double **x){
 }
 
 // procedure to move rows
-void mov_rows(int row_idx, int piv_pos, int n, double **x){
-    double *aux;
+void mov_rows(int row_idx, int piv_pos, int n, long double **x){
+    long double *aux;
 
     aux = x[row_idx];
     x[row_idx] = x[piv_pos];
@@ -192,7 +193,7 @@ void mov_rows(int row_idx, int piv_pos, int n, double **x){
 }
 
 // Gauss-Jordan algorithm
-void gauss_jordan_algorithm(int n, double **x, double *sign){
+void gauss_jordan_algorithm(int n, long double **x, long double *sign){
     int piv_pos;
 
     for(int i=1; i<=n; i++){    // loop for each row
@@ -204,16 +205,22 @@ void gauss_jordan_algorithm(int n, double **x, double *sign){
         }        
 
         // recalculate the values of row using pivot
-        for(int j=i+1; j<=n; j++){            
+        for(int j=i+1; j<=n; j++){
             for(int k=i+1; k<=n; k++){
-                x[j][k] -= x[j][i]*x[i][k]/x[i][i];
-            }   
+                if(x[i][i] == 0){
+                    cout<<"\nIt is not possible calculate"<<endl;
+                    exit(1);
+                }else{
+                    x[j][k] -= x[j][i]*x[i][k]/x[i][i];
+                }                
+            }
+            x[j][i] = 0;
         }
     }
 }
 
 // procedure to clean memory
-void free_memory(int n, double **x){
+void free_memory(int n, long double **x){
     for(int i=1; i<=n; i++){
         delete[] x[i];
     }

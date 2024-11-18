@@ -200,7 +200,7 @@ void gauss_jordan_algorithm(int n, double **x, double *sign){
 
         if(piv_pos != i){   // pivots need have position ii
             mov_rows(i, piv_pos, n, x);
-            (*sign) *= -1;    // for each interchanging of 
+            (*sign) *= -1;    // for each interchanging of rows
         }        
 
         // recalculate the values of row using pivot

@@ -15,3 +15,7 @@ https://sourceforge.net/projects/mingw/files/latest/download
 
 3) to manage different type of encoding in vscode, select 
 utf-8 > save with encoding > Cyrillic (Windows 1251)
+
+4) when manage several files linked in format .h, .cpp thus need compile the program using the command:
+
+> g++ main.cpp <file1.cpp> <file2.cpp> ... <filen.cpp> -o main

@@ -29,29 +29,37 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
     - Управление сущность клиента  
 
   **menu()**   
+    
   ![image](https://github.com/user-attachments/assets/9cf86817-de43-413b-bbf5-0f623f8fa572)   
      
   **insert()**   
+    
   ![image](https://github.com/user-attachments/assets/e6b27fad-db2b-4b0d-a008-8476b72b0504)  
 
-  **read()**  
-  ![image](https://github.com/user-attachments/assets/ec90c629-1b86-442a-8541-52ceac3c5b61)  
-
+  **read()**   
+      
+  ![image](https://github.com/user-attachments/assets/e4f66c0c-2b3e-4cb2-bb75-bc2d68e8fe19)  
+     
   **search()**  
+    
   ![image](https://github.com/user-attachments/assets/e20970ff-d34b-43da-80a3-47a1c2ab7312)  
     
   **sort()**  
+    
   ![image](https://github.com/user-attachments/assets/da9825f4-6a24-4245-8e0c-09d656c1e62c)  
 
   **update()**  
+     
   ![image](https://github.com/user-attachments/assets/709f643c-7870-4711-997d-b8c1b05c4c53)  
 
   **delete()**  
+     
   ![image](https://github.com/user-attachments/assets/86c51ca4-ead8-4d89-bef6-53197a7471a3)   
     
   ![image](https://github.com/user-attachments/assets/c23eeb19-e647-4ec3-93a7-a6cd9fa2775e)  
 
   **find()**  
+     
   ![image](https://github.com/user-attachments/assets/47359ad2-0fa2-48c6-a334-0578d9ba248c)  
              
 ### Урок 06 - 1-я Контрольная работа (сеньтябрь - октябрь)   

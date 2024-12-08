@@ -10,14 +10,30 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
   - Задания выполняются в группах по 2 студенты (у них должна быть одна и та же файлов в их репозитории)  
   - Все задачи публикуются в отдельных репозиториях GitHub (исходный код в формате файла .cpp + отчет в формате файла .pdf)  
 
+### Урок 09 - Использование файлов  
+-----------------------------------  
+
+**Главные подтемы:**  
+    - Запись данных в файлах  
+    - Чтение данных в файлах  
+    - Взаимодействие между первичной и вторичной памятью  
+    - Структуры и операции с файлами   
+  
 ### Урок 08 - Построение системы с CRUD-операциями над структурами на C++
 --------------------------------------------------------------------------   
 
   **Главные подтемы:**  
     - Взаимодействие нескольких структур   
     - Система управления заказами  
+
+  Взаимодействие между структурами «Клиент», «Продукт», «Заказ», «Детализация заказа»:  
     
-    
+  ![image](https://github.com/user-attachments/assets/12ef33d2-0c4a-431b-a0de-6634c96bcf65)
+  
+  - 1 **заказ** имеет 1 **клиента**, но 1 **клиент** может сделать много **заказов**
+  - 1 **заказ** имеет много **деталей заказа**, но 1 **деталь заказа** принадлежит только 1 уникальному **заказу**. Каждый заказ имеет вектор деталей заказа
+  - 1 **деталь заказа** содержит только 1 **продукт**, но 1 **продукт** может находиться во многих **деталях заказа**
+     
 ### Урок 07 - Структуры  
 ------------------------  
 
@@ -38,24 +54,24 @@ https://drive.google.com/drive/folders/1txIMMWdt0VNTTujqblcVoLeQ-rT1cqVC
 
   **read()**   
       
-  ![image](https://github.com/user-attachments/assets/e4f66c0c-2b3e-4cb2-bb75-bc2d68e8fe19)  
-     
+  ![image](https://github.com/user-attachments/assets/23808e22-26ec-4327-b32e-d6cf11912acd)  
+          
   **search()**  
     
   ![image](https://github.com/user-attachments/assets/e20970ff-d34b-43da-80a3-47a1c2ab7312)  
     
   **sort()**  
     
-  ![image](https://github.com/user-attachments/assets/da9825f4-6a24-4245-8e0c-09d656c1e62c)  
-
+  ![image](https://github.com/user-attachments/assets/f4d4e285-93cf-41ed-bd60-d1073e32025e)  
+    
   **update()**  
      
-  ![image](https://github.com/user-attachments/assets/709f643c-7870-4711-997d-b8c1b05c4c53)  
+  ![image](https://github.com/user-attachments/assets/b4d47eec-3bfc-438c-b884-19f05c6691ed)  
 
   **delete()**  
      
-  ![image](https://github.com/user-attachments/assets/86c51ca4-ead8-4d89-bef6-53197a7471a3)   
-    
+  ![image](https://github.com/user-attachments/assets/c03c736f-84c8-4b31-8b3e-c6a7b29fad4a)  
+     
   ![image](https://github.com/user-attachments/assets/c23eeb19-e647-4ec3-93a7-a6cd9fa2775e)  
 
   **find()**  
